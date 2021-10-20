@@ -182,27 +182,27 @@ for i = 1:8
 end
 [~, minvariation] = min(variation);
 
-lsdot=.01;
-for i=1:N-1
-%    dt(i) = (ls(i+1)-ls(i))/lsdot;
-    for k=1:8
-        qdot(:,i,k)=(q(:,i+1,k)-q(:,i,k))/dt(i);
-        Ri1=T{i+1,k}(1:3,1:3);
-        Ri=T{i,k}(1:3,1:3);
-        w(:,i,k)=vee(Ri1*Ri'-eye(3,3))/dt(i);
-        pi1=T{i+1,k}(1:3,4);
-        pi=T{i,k}(1:3,4);
-        v(:,i,k)=(pi1-pi)/dt(i);
-    end
-end
+%lsdot=.01;
+%for i=1:N-1
+%%    dt(i) = (ls(i+1)-ls(i))/lsdot;
+%    for k=1:8
+%        qdot(:,i,k)=(q(:,i+1,k)-q(:,i,k))/dt(i);
+%        Ri1=T{i+1,k}(1:3,1:3);
+%        Ri=T{i,k}(1:3,1:3);
+%        w(:,i,k)=vee(Ri1*Ri'-eye(3,3))/dt(i);
+%        pi1=T{i+1,k}(1:3,4);
+%        pi=T{i,k}(1:3,4);
+%        v(:,i,k)=(pi1-pi)/dt(i);
+%    end
+%end
 
-for k=1:8
-   for i=1:6
-       maxqdot(i,k)=max(qdot(i,:,k));
-   end
-   fprintf('maximum qdot for pose %d \n', k);
-   disp(maxqdot(:,k)');   
-end
+%for k=1:8
+%   for i=1:6
+%       maxqdot(i,k)=max(qdot(i,:,k));
+%   end
+%   fprintf('maximum qdot for pose %d \n', k);
+%   disp(maxqdot(:,k)');   
+%end
 
 %
 % R2q.m
